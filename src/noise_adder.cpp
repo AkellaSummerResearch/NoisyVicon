@@ -65,7 +65,7 @@ int main(int argc, char** argv)
   yaw = 0.0;
   prevWrite=ros::Time::now();
   vicon_sub = nh.subscribe("/vicon/crazyflie2", 10, viconCallback);
-  noise_pub = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("noisy_vicon",100);
+  noise_pub = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("/Bilbo/vision_pose/pose_cov",100);
   srand(time(NULL));
   ros::spin();
 }
